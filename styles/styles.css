@@ -1,6 +1,32 @@
+/* Navigation */
+nav {
+    background-color: #333;
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    padding: 0.5rem;
+    display: block;
+}
+
+/* Heading */
+h1 {
+    color: #333;
+}
+
 /* Main content */
 main {
     max-width: 840px;
+}
+
+/* Profile image */
+main img {
+    width: 150px;
+    height: auto;
+    border: 1px solid #333;
+    padding: 0.2rem;
+    box-shadow: 0 0 10px gray;
 }
 
 /* Country section */
@@ -17,12 +43,6 @@ aside {
 /* Country image */
 aside img {
     width: 200px;
-    height: auto;
-}
-
-/* Profile image */
-main img {
-    width: 150px;
     height: auto;
 }
 
