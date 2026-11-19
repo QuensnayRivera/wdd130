@@ -5,32 +5,53 @@
     box-sizing: border-box;
 }
 
+/* Header */
+header {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
 /* Navigation */
 nav {
     background-color: #333;
     padding: 1rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     padding: 0.5rem 1rem;
-    display: inline-block;
+    text-decoration: none;
+}
+
+/* Main Grid Layout */
+.grid {
+    max-width: 840px;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    grid-template-areas: "aside main";
+}
+
+/* Main Content */
+main {
+    grid-area: main;
+    margin: 1rem;
 }
 
 /* Heading */
 h1 {
     color: #333;
     margin-bottom: 1rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
 }
 
-/* Main content */
-main {
-    max-width: 840px;
-    margin: 1rem auto;
-}
-
-/* Profile image */
+/* Profile Image */
 main img {
     width: 150px;
     height: auto;
@@ -41,22 +62,25 @@ main img {
     margin: 0 1rem 1rem;
 }
 
-/* Clear float */
+/* Clear Float */
 main::after {
     content: "";
     display: block;
     clear: both;
 }
 
-/* Country section */
+/* Country Section */
 aside {
-    width: 20rem;
-    margin: 1rem auto;
+    grid-area: aside;
+    width: auto;
+    max-width: 20rem;
+    margin: 1rem;
     text-align: center;
     position: relative;
+    align-self: start;
 }
 
-/* Country heading */
+/* Country Heading */
 aside h2 {
     position: absolute;
     top: 15px;
@@ -68,9 +92,10 @@ aside h2 {
     z-index: 1;
 }
 
-/* Country image */
+/* Country Image */
 aside img {
     width: 200px;
+    max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto 1rem;
@@ -83,7 +108,8 @@ p {
 
 /* Footer */
 footer {
-    margin-top: 15px;
+    max-width: 840px;
+    margin: 15px auto 0;
     border-top: 1px solid #000;
     text-align: center;
 }
@@ -97,7 +123,16 @@ footer {
     color: #333;
 }
 
-/* Center Country Box */
-aside.box {
-    margin: 1rem auto;
+/* Responsive Layout */
+@media screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "main"
+            "aside";
+    }
+
+    aside {
+        max-width: 100%;
+    }
 }
